@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "firstName": "rer",
+      "lastName": "SEDAN",
+      "email": "ttt@gmail.com",
+      "phoneNumber": "543453",
+      "password": "13213",
+      "id": "38224c20-a221-42f8-9d96-846d33074a84",
+      "createdAt": "2023-01-22T17:28:19.501Z",
+      "updatedAt": "2023-01-23T20:29:21.285Z"
+    },
+    {
+      "firstName": "rer",
+      "lastName": "eere",
+      "email": "ttffft@gmail.com",
+      "phoneNumber": "543453fff",
+      "password": "1321fff3",
+      "id": "abd65c51-5845-4454-94ed-c48e75f04429",
+      "createdAt": "2023-01-23T17:13:50.532Z",
+      "updatedAt": "2023-01-23T20:40:40.569Z"
+    },
+    {
+      "firstName": "rer",
+      "lastName": "eere",
+      "email": "ttffft@gmail.com",
+      "phoneNumber": "543453fff",
+      "password": "1321fff3",
+      "id": "f937570b-c2f7-448e-9b17-74948e9f6379",
+      "createdAt": "2023-01-23T17:14:33.174Z",
+      "updatedAt": "2023-01-23T20:36:20.068Z"
+    }
+  ],
+  "fighters": [
+    {
+      "name": "Kelikon",
+      "power": "12wqw",
+      "defense": "2qwqw",
+      "health": "10qwq0",
+      "id": "388639d1-a76d-419a-a098-632236e03b79",
+      "createdAt": "2023-01-23T17:15:32.561Z",
+      "updatedAt": "2023-01-23T17:25:29.773Z"
+    }
+  ],
+  "fights": []
+}
