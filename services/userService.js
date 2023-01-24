@@ -1,6 +1,4 @@
 import { userRepository } from "../repositories/userRepository.js";
-const REGEXP_PHONE = /(^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2})$/g;
-const REGEXP_EMAIL= /(^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6})$/g
 
 class UserService {
   getAllUsers() {
@@ -19,36 +17,22 @@ class UserService {
       phoneNumber: data.phoneNumber,
       password: data.password
     };
-    return userRepository.create(USER);
+
+    return userRepository.create(USER)
   }
 
   updateUser(id, dataToUpdate) {
-    const item = userRepository.update(id, dataToUpdate);
-    if (!item) {
-      return null;
+    const item = this.search({id})
+    if(item){
+      return userRepository.update(id,dataToUpdate)
+    } else {
+        return null
     }
-    return item;
   }
 
   deleteUser(id) {
     const item = userRepository.delete(id);
     if ( item.length < 1) {
-      return null;
-    }
-    return item;
-  }
-
-  checkEmailUser(email) {
-    const item = REGEXP_EMAIL.test(email);
-    if (!item) {
-      return null;
-    }
-    return item;
-  }
-
-  checkPhoneUser(phoneNumber) {
-    const item = REGEXP_PHONE.test(phoneNumber);
-    if (!item) {
       return null;
     }
     return item;

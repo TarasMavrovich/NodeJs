@@ -10,21 +10,21 @@ class FighterService {
   }
 
   createFighter(data) {
-    const USER1 = {
+    const USER = {
       name: data.name,
       power: data.power,
-      defense: data.defense,
-      health: data.health,
+      defense: data.defense
     };
-    return fighterRepository.create(USER1);
+    return fighterRepository.create(USER);
   }
 
   updateFighter(id, dataToUpdate) {
-    const item = fighterRepository.update(id, dataToUpdate);
-    if (!item) {
-      return null;
+    const item = this.search({id})
+    if(item){
+      return fighterRepository.update(id,dataToUpdate)
+    } else {
+        return null
     }
-    return item;
   }
 
   deleteFighter(id) {

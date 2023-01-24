@@ -1,45 +1,38 @@
 {
   "users": [
     {
-      "firstName": "rer",
-      "lastName": "SEDAN",
-      "email": "ttt@gmail.com",
-      "phoneNumber": "543453",
-      "password": "13213",
-      "id": "38224c20-a221-42f8-9d96-846d33074a84",
-      "createdAt": "2023-01-22T17:28:19.501Z",
-      "updatedAt": "2023-01-23T20:29:21.285Z"
+      "firstName": "Drako",
+      "lastName": "Amilion",
+      "email": "tolkien.amilion@gmail.com",
+      "phoneNumber": "065-234-5681",
+      "password": "456",
+      "id": "746aa5fb-bb41-4842-a8fc-e9876f5a3ae7",
+      "createdAt": "2023-01-24T01:31:16.354Z"
     },
     {
-      "firstName": "rer",
-      "lastName": "eere",
-      "email": "ttffft@gmail.com",
-      "phoneNumber": "543453fff",
-      "password": "1321fff3",
-      "id": "abd65c51-5845-4454-94ed-c48e75f04429",
-      "createdAt": "2023-01-23T17:13:50.532Z",
-      "updatedAt": "2023-01-23T20:40:40.569Z"
-    },
-    {
-      "firstName": "rer",
-      "lastName": "eere",
-      "email": "ttffft@gmail.com",
-      "phoneNumber": "543453fff",
-      "password": "1321fff3",
-      "id": "f937570b-c2f7-448e-9b17-74948e9f6379",
-      "createdAt": "2023-01-23T17:14:33.174Z",
-      "updatedAt": "2023-01-23T20:36:20.068Z"
+      "firstName": "Tolkien",
+      "lastName": "Tiribion",
+      "email": "drago.tiribiodn@gmail.com",
+      "phoneNumber": "098-715-4321",
+      "password": "123",
+      "id": "23a0659d-ddbe-42f7-b764-7e3c03ff0704",
+      "createdAt": "2023-01-24T01:31:36.052Z"
     }
   ],
   "fighters": [
     {
-      "name": "Kelikon",
-      "power": "12wqw",
-      "defense": "2qwqw",
-      "health": "10qwq0",
-      "id": "388639d1-a76d-419a-a098-632236e03b79",
-      "createdAt": "2023-01-23T17:15:32.561Z",
-      "updatedAt": "2023-01-23T17:25:29.773Z"
+      "name": "Prometey",
+      "power": "2",
+      "defense": "10",
+      "id": "0cdfd4f8-4ffe-47d7-ba7e-a65a13616dec",
+      "createdAt": "2023-01-24T01:30:40.641Z"
+    },
+    {
+      "name": "Axelis",
+      "power": "6",
+      "defense": "6",
+      "id": "c8b7adf2-46f1-40fb-9f09-5a1e91594bef",
+      "createdAt": "2023-01-24T01:30:57.431Z"
     }
   ],
   "fights": []

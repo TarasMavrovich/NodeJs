@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error found AllFighter"
     })
@@ -39,7 +39,7 @@ router.get('/:id', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error found fighter"
     })
@@ -49,7 +49,7 @@ router.get('/:id', (req, res, next) => {
   }
 }, responseMiddleware)
 
-router.post('/', (req, res, next) => {
+router.post('/', createFighterValid, (req, res, next) => {
   try {
     const result = fighterService.createFighter( req.body );
     if (!result) {
@@ -59,7 +59,7 @@ router.post('/', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error create fighter"
     })
@@ -69,7 +69,7 @@ router.post('/', (req, res, next) => {
   }
 }, responseMiddleware)
 
-router.put('/:id', (req, res, next) => {
+router.put('/:id', updateFighterValid, (req, res, next) => {
   try {
     const id = req.params.id;
     const result = fighterService.updateFighter( id, req.body );
@@ -80,7 +80,7 @@ router.put('/:id', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error fighter not found"
     })
@@ -101,7 +101,7 @@ router.delete('/:id', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error delete fighter"
     })
@@ -110,28 +110,6 @@ router.delete('/:id', (req, res, next) => {
     next();
   }
 }, responseMiddleware)
-// router.get('/', (req, res, next) => {
-//   res.send(fighterService.getAllFighter());
-// }) 
-
-// router.get('/:id', (req, res, next) => {
-//   let id = req.params.id;
-//   res.send(fighterService.search( {id} ))
-// })
-
-// router.post('/', (req, res, next) => {
-//   res.send(fighterService.createFighter( req.body ))
-// })
-
-// router.put('/:id', (req, res, next) => {
-//   let id = req.params.id;
-//   res.send(fighterService.updateFighter( id, req.body ))
-// })
-
-// router.delete('/:id', (req, res, next) => {
-//   let id = req.params.id;
-//   res.send(fighterService.deleteFighter( id ))
-// })
 // TODO: Implement route controllers for fighter
 
 export { router };

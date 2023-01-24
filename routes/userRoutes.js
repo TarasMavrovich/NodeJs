@@ -5,6 +5,7 @@ import {
   updateUserValid,
 } from "../middlewares/user.validation.middleware.js";
 import { responseMiddleware } from "../middlewares/response.middleware.js";
+import { fighterService } from "../services/fighterService.js";
 
 const router = Router();
 
@@ -18,7 +19,7 @@ router.get('/', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error found AllUser"
     })
@@ -32,6 +33,7 @@ router.get('/:id', (req, res, next) => {
   try {
     const id = req.params.id;
     const result = userService.search({ id });
+    console.log(result)
     if (!result) {
       res.status(404).send( {message: `Cannot find user with ${id}. User not found`} )
     } else {
@@ -39,7 +41,7 @@ router.get('/:id', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error found user"
     })
@@ -49,7 +51,7 @@ router.get('/:id', (req, res, next) => {
   }
 }, responseMiddleware)
 
-router.post('/', (req, res, next) => {
+router.post('/', createUserValid, (req, res, next) => {
   try {
     const result = userService.createUser( req.body );
     if (!result) {
@@ -59,7 +61,7 @@ router.post('/', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error сreate user"
     })
@@ -69,11 +71,10 @@ router.post('/', (req, res, next) => {
   }
 }, responseMiddleware)
 
-router.put('/:id', (req, res, next) => {
+router.put('/:id', updateUserValid, (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = userService.updateUser( id, req.body );
-    console.log(result);
+    const result = userService.updateUser( id, req.body);
     if (!result) {
       res.status(404).send( {message: `Cannot update user with this id: ${id}`} )
     } else {
@@ -102,7 +103,7 @@ router.delete('/:id', (req, res, next) => {
     }
   }
   catch ({message}) {
-    return (req.body = {
+    return (res.send = {
       error: true,
       message: "Error delete user"
     })
@@ -111,32 +112,6 @@ router.delete('/:id', (req, res, next) => {
     next();
   }
 }, responseMiddleware)
-
-
-// router.get('/', (req, res, next) => {
-//   res.send(userService.getAllUsers());
-// }) 
-
-// router.get('/:id', (req, res, next) => {
-//   let id = req.params.id;
-//   res.send(userService.search({ id }))
-// })
-
-// router.post('/', (req, res, next) => {
-//   res.send(userService.createUser( req.body ))
-// })
-
-// router.put('/:id', (req, res, next) => {
-//   let id = req.params.id;
-//   res.send(userService.updateUser( id, req.body ))
-// })
-
-// router.delete('/:id', (req, res, next) => {
-//   let id = req.params.id;
-//   console.log({id})
-//   res.send(userService.deleteUser( id ))
-// })
-
 // TODO: Implement route controllers for user
 
 export { router };
